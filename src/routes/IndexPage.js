@@ -56,7 +56,7 @@ class IndexPage extends React.Component{
 		var local = new BMap.LocalSearch(map, {
 			renderOptions:{map: map}
 		});
-		local.search(val);
+		local.search(val?val:"深圳");
 		
 	}
 	componentWillMount(){
@@ -96,7 +96,7 @@ class IndexPage extends React.Component{
 		return (
 			<div className={styles.normal}>
 				<Search
-					placeholder="输入位置"
+					placeholder="深圳"
 					style={{ width: '80%'}}
 					onSearch={value => this.handelSearch(value)}
 					className={styles.SearchInput}
