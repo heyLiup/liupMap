@@ -36,10 +36,38 @@
   
 }
 .SearchInput{
+
+  /* transform: translateX(5%); */
+}
+.Menus{
+  position: absolute;
+  top:25%;
+  z-index: 9;
+  width:240px;
+}
+.show{
+  box-sizing:border-box;
   position: absolute;
   top:5%;
   left:10%;
   z-index: 9;
-  /* transform: translateX(5%); */
+  display: inline-block;
 }
-
+.hidden{
+  box-sizing:border-box;
+  display: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin-top: 0 !important;
+  opacity: 0;
+}
+.result{
+  box-sizing:border-box;
+  position: absolute;
+  top:70%;
+  height:30%;
+  overflow: scroll;
+  width:100%;
+  /* left:20%; */
+}
