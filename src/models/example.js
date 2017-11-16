@@ -15,10 +15,15 @@ export default {
     iptsShow:{ //切换搜索框或者导航框
       searchInput:true,  //搜索框显示
     },
-    guide:{ //导航
+    guide:{ //导航参数
       startLoc:"",
       endLoc:"",
-      guideType:""
+    },
+    guideType:{  //导航类型
+      guideType:"bus"
+    },
+    guideResult:{ //导航结果
+      show:false
     }
   },
   subscriptions: {
@@ -34,17 +39,21 @@ export default {
 
   reducers: {
     currentLoc(state,{ payload: {...position} }) {
-      console.log(position);
       // return state.position=position
       return {...state,position}
     },
     search(state,{ payload: {val:search} }){
-      console.log(search);
       return {...state,search}
     },
     toogleInput(state,{payload:{...iptsShow}}){
-      console.log(iptsShow);
       return {...state,iptsShow}
+    },
+    toggleGuideResult(state,{payload:{...guideResult}}){
+      return {...state,guideResult}
+      
+    },
+    handleGuideType(state,{payload:{...guideType}}){
+      return {...state,guideType}
     }
   },
 
